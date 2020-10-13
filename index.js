@@ -6,7 +6,7 @@ const server = http.createServer();
 
 const calc = (req, res) => {
   const { n1, n2 } = querystring.parse(req.url.substr(5));
-  res.setHeader('Access-Control-Allow-Origin','https://kodaktor.ru')
+  res.setHeader('Access-Control-Allow-Origin', 'https://kodaktor.ru');
   switch (req.url.substr(0, 4)) {
     case '/add':
       res.end(`${+n1 + +n2}`);
@@ -14,8 +14,10 @@ const calc = (req, res) => {
     case '/mpy':
       res.end(`${+n1 * +n2}`);
       break;
+    default:
+      res.end('The server is running, please use {add/mpy}?n1=<Number>&n2=<Number>');
   }
-}
+};
 
 server.listen(process.env.PORT || PORT);
-server.on('request', calc)
+server.on('request', calc);
