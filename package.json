@@ -1,0 +1,13 @@
+{
+  "name": "querystring",
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
